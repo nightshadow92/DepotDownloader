@@ -1360,7 +1360,7 @@ namespace DepotDownloader
                 downloadCounter.TotalBytesCompressed += chunk.CompressedLength;
                 downloadCounter.TotalBytesUncompressed += chunk.UncompressedLength;
             }
-
+            Console.WriteLine("{0,6:#00.00}% completed of {1} total chunks. There are {2} left to download", (sizeDownloaded / (float)depotDownloadCounter.CompleteDownloadSize) * 100.0f, totalchunks, remainingChunks);
             if (remainingChunks == 0)
             {
                 var fileFinalPath = Path.Combine(depot.installDir, file.FileName);
